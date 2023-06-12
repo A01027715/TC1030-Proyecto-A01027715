@@ -33,7 +33,7 @@ Empleado::Empleado(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trab
   Puesto= Pue;
   Nombre= Nom;
   Matricula= Mat;
-  Sueldo= Tiempo_Trabajo * 1250;
+  Sueldo= Tiempo_Trabajo * 50;
   Tipo_de_Empleado= Tipo;
 };
 
@@ -57,7 +57,7 @@ void Empleado::imprime_info(){
 	cout << "Nombre: "<< Nombre << endl;
 	cout << "Matricula: "<< Matricula << endl;
 	cout << "Puesto: "<< Puesto << endl;
-	cout << "Sueldo: "<< Sueldo << endl;
+	cout << "Sueldo Total pagado o por pagar: "<< Sueldo << " USD" << endl;
   cout << "Area de trabajo: "<< Tipo_de_Empleado << endl;
 }
 
