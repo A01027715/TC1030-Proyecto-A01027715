@@ -1,6 +1,25 @@
-# include "at.h"
+/*
+ *
+ * Proyecto Interfaz de Jurassic Park
+ * Ulises Orlando Carrizalez Lerín
+ * A01027715
+ * 13/06/2023
+ * versio : 2
+ * Como proyecto de TC1030 realize el siguiente trabajo. Este trata de una interfaz 
+ * de empleado para Jurassic Park, en esta puede acceder tano administradores como empleados, 
+ * los empleados podrán revisar su estatus como empleado (Nombre, Matricula, Área de trabajo 
+ * (1,2,3), Sueldo, puesto y administrador a cargo). Mientras que los administradores tendran 
+ * las misma capacidad que el empleado de planta, tambien puede enseñar los empleados de su area 
+ * de trabajo que estan a su cargo, agregar nuevos empleados, enseñar informacion basica del administrador 
+ * y revisar su informacion sencible, pero requiere dar su contraseña para ello, si falla, el programa se 
+ * va a burlar cual Jurassic Park. El programa ya tendra de informacion base 3 Areas de trabajo, con 4 empleados 
+ * de planta y 1 administrador (La informacion de cada empleado esta en el excel "Empleado JP.xlsx" para que pueda 
+ * probar cada empleado).
+ */
 
-int main(){
+# include "at.h" //biblioteca con mis objetos a usar (hay puentes ente unos y otros, por lo que solo necesito llamar uno de las bibliotecas y solitas se llaman el resto)
+
+int main(){ //
     int x;
     int y;
     int mat;
@@ -28,7 +47,7 @@ int main(){
     cout<<", .;`      `'::''`"<<endl;
     cout<<",`;`."<<endl;
     while (true){
-        cout<<"_______________________________________";
+        cout<<"_______________________________________"<<endl;
         cout<<"Indique el tipo de empleado que es (insertar el numero de opcion):"<<endl<<"1. Administrador"<<endl<<"2. Empleado de planta"<<endl<<"3. Apagar sistema"<<endl;
         cin >> x;
         cout<<endl<<"_______________________________________"<<endl;
@@ -83,7 +102,7 @@ int main(){
             Empleado * trabajador= JP.encontrarEmpleado(mat);
 
             if (trabajador->Empleado::get_Rango() != 2){
-                cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN ADMINISTRADOR"<<endl;
+                cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN EMPLEADO DE PALANTA"<<endl;
             }
 
             else {

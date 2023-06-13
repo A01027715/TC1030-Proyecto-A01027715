@@ -1,19 +1,36 @@
+/*
+ *
+ * Proyecto Interfaz de Jurassic Park
+ * Ulises Orlando Carrizalez Lerín
+ * A01027715
+ * 13/06/2023
+ * versio : c++ standard
+ * Esta clase defina objeto de tipo AT (Area de trabajo)
+ */
+
 #ifndef at_h
 #define at_h
 
-#include "admin.h"
+#include "admin.h" //biblioteca con mis objetos a usar (hay puentes ente unos y otros, por lo que solo necesito llamar uno de las bibliotecas y solitas se llaman el resto)
 
 
 class AT {
+  
+  //Variables de instancia del objeto
   private:
     int numEmpleados; //Numero de empleados (Sera usado para navegar en el arreglo de empleados)
     Empleado * emp[20]; //Arrego de empleados
 
+  //Metodos deL objeto
   public:
     AT(); //Metodo constructo de Area de trabajo
+
     void generarEjemplo(); //Registra a los empleados base del codigo
-    void mostrarPlanta(int adm); //Metodo para administradores para revisar los empleados de su area de trabajo
-    void agregarEmpleado(int adm, std::string admi); //Metodo para administradores para agregar nuevos empleados a sus areas de trabajo
+
+    void mostrarPlanta(int adm); //Metodo para administradores con el objetivo de revisar los empleados de su area de trabajo
+
+    void agregarEmpleado(int adm, std::string admi); //Metodo para administradores con el objetivo de agregar nuevos empleados a sus areas de trabajo
+
     Empleado * encontrarEmpleado(int mat); //Metodo nos permite buscara a los empleados en base a su matricula
 };
 
