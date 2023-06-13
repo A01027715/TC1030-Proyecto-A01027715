@@ -6,7 +6,7 @@
  * 13/06/2023
  * versio : c++ standards
  * Esta clase defina objeto de tipo Planta (Empleado de Planta) que hereda informacion de Empeado
- */
+*/
 
 #ifndef planta_h
 #define planta_h

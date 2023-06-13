@@ -15,7 +15,7 @@
  * va a burlar cual Jurassic Park. El programa ya tendra de informacion base 3 Areas de trabajo, con 4 empleados 
  * de planta y 1 administrador (La informacion de cada empleado esta en el excel "Empleado JP.xlsx" para que pueda 
  * probar cada empleado).
- */
+*/
 
 # include "at.h" //biblioteca con mis objetos a usar (hay puentes ente unos y otros, por lo que solo necesito llamar uno de las bibliotecas y solitas se llaman el resto)
 
@@ -26,6 +26,7 @@ int main(){ //
     int con;
     AT JP;
     JP.generarEjemplo();
+    //Imprime el logo de Jurassic Park y da la bievenida
     cout<<endl<<"Bienvenidos a intefas de empleado de Jurassic Park"<<endl;
     cout<<"                  ,"<<endl;
     cout<<"               ,  ;:._.-`''."<<endl;
@@ -47,32 +48,35 @@ int main(){ //
     cout<<", .;`      `'::''`"<<endl;
     cout<<",`;`."<<endl;
     while (true){
+        //Empieza solicitando que tipo de empleado es
         cout<<"_______________________________________"<<endl;
         cout<<"Indique el tipo de empleado que es (insertar el numero de opcion):"<<endl<<"1. Administrador"<<endl<<"2. Empleado de planta"<<endl<<"3. Apagar sistema"<<endl;
         cin >> x;
         cout<<endl<<"_______________________________________"<<endl;
         if (x == 1){
-            cout<<"Dame tu matricula:"<<endl;
+            //Si es un admi
+            cout<<"Dame tu matricula:"<<endl; //solicita la matricula
             cin >> mat;
-            Empleado * trabajador= JP.encontrarEmpleado(mat);
-            if (trabajador->Empleado::get_Rango() != 1){
-                cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN ADMINISTRADOR"<<endl;
+            Empleado * trabajador= JP.encontrarEmpleado(mat); //usa .econtrarEmpleado para buscar el empleado en base a su matricula
+            if (trabajador -> Empleado::get_Rango() != 1){
+                cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN ADMINISTRADOR"<<endl; //imprime esto y regresa al inicio si la matricula no es de administrador
             }
             else {
-                std::string NombreA= trabajador->Empleado::get_Nombre();
+                std::string NombreA= trabajador -> Empleado::get_Nombre();
                 while (true){
+                    //Despliega el menu de opciones
                     cout<<endl<<"_______________________________________"<<endl;
                     cout<<"Bienvenido "<<NombreA<<" como te puedo ayudar el dia de hoy? (insertar el numero de opcion):"<<endl<<"1. Ensenar informacion de mis empleado de planta de tu area"<<endl<<"2. Agregar empleado de planta"<<endl<<"3. Ensenar mi informacion basica"<<endl<<"4. Ensenar mi informacion avanzada"<<endl<<"5. Cerrar sesion"<<endl;
                     cin>> y;
                     cout<<endl<<"_______________________________________"<<endl;
 
                     if (y==1){
-                        int adm= trabajador->Empleado::get_Tipo_de_Empleado();
+                        int adm= trabajador -> Empleado::get_Tipo_de_Empleado();
                         JP.mostrarPlanta(adm);
                     }
 
                     else if (y==2){
-                        int adm= trabajador->Empleado::get_Tipo_de_Empleado();
+                        int adm= trabajador -> Empleado::get_Tipo_de_Empleado();
                         JP.agregarEmpleado(adm, NombreA);
                         cout<<endl<<"_______________________________________"<<endl;
                     }
@@ -101,7 +105,7 @@ int main(){ //
             cin >> mat;
             Empleado * trabajador= JP.encontrarEmpleado(mat);
 
-            if (trabajador->Empleado::get_Rango() != 2){
+            if (trabajador -> Empleado::get_Rango() != 2){
                 cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN EMPLEADO DE PALANTA"<<endl;
             }
 

@@ -6,7 +6,7 @@
  * 13/06/2023
  * versio : c++ standard
  * Esta clase defina objeto de tipo Administrador que hereda informacion de Empeado
- */
+*/
 
 #ifndef admin_h
 #define admin_h

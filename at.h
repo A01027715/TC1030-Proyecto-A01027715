@@ -6,7 +6,7 @@
  * 13/06/2023
  * versio : c++ standard
  * Esta clase defina objeto de tipo AT (Area de trabajo)
- */
+*/
 
 #ifndef at_h
 #define at_h
@@ -38,6 +38,7 @@ AT :: AT(){
     numEmpleados = 0;
 }
 
+//Reliza el arreglo de empleados base
 void AT :: generarEjemplo(){ 
     emp[numEmpleados] = new Planta("Programador general" , "Jorge Castillo" , 21986795 , 9 , 1 , "Ulises Carrizalez",2);
     numEmpleados++;
@@ -65,6 +66,10 @@ void AT :: generarEjemplo(){
     numEmpleados++;
 }
 
+/*
+*Usa un ciclo for para revisar todo los empleado del arreglo y compara a todos los tipos de empelado con el del administrador,
+*finalmente si encuetra alguno se asegura de que no este registrado con un rango de administrador (osea 1)
+*/
 void AT :: mostrarPlanta(int adm){
     for (int i = 0; i < numEmpleados; i++){
         int tip= emp[i] -> get_Tipo_de_Empleado();
@@ -73,7 +78,10 @@ void AT :: mostrarPlanta(int adm){
         }
     }
 }
-
+/*
+*Solicita toda la informacion necesaria para realizar el objeto Planta sin contar el Rango (usa 2 por defult), 
+*Tipo y Administrador (se le coloca los del Administrador) (No puede diferenciar entre las matriuclas ya existentes y las nuevas)
+*/
 void AT :: agregarEmpleado(int adm, std::string admi){
     std::string nom;
     std::string pue;
@@ -90,7 +98,11 @@ void AT :: agregarEmpleado(int adm, std::string admi){
     emp[numEmpleados] = new Planta(pue , nom , mat , Tiempo_Trabajo , adm , admi, 2);
     numEmpleados++;
 }
-
+/*
+*Para encontrar a los empleados usa la matricula, el programa consigue con un ciclo for las matriculas de 
+*los empeados del arreglo y si encuentra una considencia, regresa la informacion del empleado. (Si no 
+*lo encuenta, dentiene el programa)
+*/
 Empleado * AT :: encontrarEmpleado(int mat){
     for (int i = 0; i < numEmpleados; i++){
         if (emp[i] -> Empleado::get_Matricula() == mat){

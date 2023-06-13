@@ -8,7 +8,8 @@
  * Esta clase abstracta defina objeto de tipo Empleado que hereda la informacion a:
  * Administrador
  * Planta
- */
+*/
+
 #ifndef empleado_h
 #define empleado_h
 
