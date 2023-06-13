@@ -81,19 +81,23 @@ int main(){
             cout<<"Dame tu matricula:"<<endl;
             cin >> mat;
             Empleado * trabajador= JP.encontrarEmpleado(mat);
+
             if (trabajador->Empleado::get_Rango() != 2){
                 cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN ADMINISTRADOR"<<endl;
             }
+
             else {
                 std::string NombreA= trabajador -> Empleado::get_Nombre();
                 while (true){
                     cout<<endl<<"_______________________________________"<<endl;
                     cout<<"Bienvenido "<<NombreA<<", esta es la informacion que nosotros le podemos proporcionar: "<<endl<<"1. Mi informacion de Empleado"<<endl<<"2. Cerrar sesion"<<endl;
                     cin >> y;
+
                     if (y == 1){
                         trabajador -> imprime_info();
                         cout<<endl<<"_______________________________________"<<endl;
                     }
+                    
                     else if (y == 2){break;}
                 }
                 

@@ -3,19 +3,18 @@
 
 #include "admin.h"
 
-const int maximo = 20; //Maximo de empleados
 
 class AT {
   private:
     int numEmpleados; //Numero de empleados (Sera usado para navegar en el arreglo de empleados)
-    Empleado * emp[maximo]; //Arrego de empleados
+    Empleado * emp[20]; //Arrego de empleados
 
   public:
     AT(); //Metodo constructo de Area de trabajo
     void generarEjemplo(); //Registra a los empleados base del codigo
     void mostrarPlanta(int adm); //Metodo para administradores para revisar los empleados de su area de trabajo
     void agregarEmpleado(int adm, std::string admi); //Metodo para administradores para agregar nuevos empleados a sus areas de trabajo
-    Empleado * encontrarEmpleado(int mat); //Metodo que se usa para buscara a los empleados en base a su matricula
+    Empleado * encontrarEmpleado(int mat); //Metodo nos permite buscara a los empleados en base a su matricula
 };
 
 AT :: AT(){

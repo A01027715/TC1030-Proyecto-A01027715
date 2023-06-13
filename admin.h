@@ -12,15 +12,16 @@ class Administrador: public Empleado { //Clase de los administradores que hereda
     std::string direccion; // variable de de la direccion de la vivienda del administrador
   public:
     Administrador(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di, int Ran); //Metodo constructor del administrador
-    int getContrasena(){return contrasena;} // Consigue la contraseña que sera utilizada para acceder a los datos sencibles del administrador
+    int getContrasena(){return contrasena;} // Consigue la contraseña que sera utilizada para acceder a los datos sencibles del administrador.
+    void setContrasena(int cont){contrasena = cont;} //En caso de que más adelante se quiere agrgar una opcion para cambiar la contraseña del administrador.
     std::string getUsuario(){return usuario;} // Consigue el usuario en  caso de que se valla a necesitar en el futuro
-    void setUsario (std::string us){usuario= us;} //Le da el valor a usario
+    void setUsario (std::string us){usuario= us;} //Con este en el futuro le premitrita a los administradores cambiar su Usuario
     std::string getTelelfono(){return telefono;} // Consigue el usuario en  caso de que se valla a necesitar en el futuro
-    void setTelefono(std::string tel){telefono= tel;} // Le da 
-    std::string getDireccion(){return direccion;}
-    void setDireccion(std::string di){direccion= di;};
-    void imprime_info();
-    virtual void imprime_info(int datosCon);
+    void setTelefono(std::string tel){telefono= tel;} // Con este en el futuro le premitrita a los administradores cambiar su telefono
+    std::string getDireccion(){return direccion;} //Consigue la direccion del administrador en caso de que se necesite en el futuro
+    void setDireccion(std::string di){direccion= di;}; //Con este en el futuro el administrador podra cambiar su direccion.
+    void imprime_info(); //imprime la informacion basica del administrador
+    void imprime_info(int datosCon); //imprime la infromacion sencible del administrador
 };
 
 Administrador :: Administrador (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di, int Ran) : Empleado(Pue, Nom, Mat, Tiempo_Trabajo, Tipo, Ran){
