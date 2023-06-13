@@ -8,7 +8,7 @@ const int maximo = 20; //Maximo de empleados
 class AT {
   private:
     int numEmpleados; //Numero de empleados (Sera usado para navegar en el arreglo de empleados)
-    Empleado *emp[maximo]; //Arrego de empleados
+    Empleado * emp[maximo]; //Arrego de empleados
 
   public:
     AT(); //Metodo constructo de Area de trabajo
@@ -23,29 +23,29 @@ AT :: AT(){
 }
 
 void AT :: generarEjemplo(){ 
-    emp[numEmpleados] = new Planta("Programador general" , "Jorge Castillo" , 21986795 , 9 , 1 , "Ulises Carrizalez");
+    emp[numEmpleados] = new Planta("Programador general" , "Jorge Castillo" , 21986795 , 9 , 1 , "Ulises Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Programador de seguridad" , "Ray Arnold" , 21293648 , 8 , 1 , "Ulises Carrizalez");
+    emp[numEmpleados] = new Planta("Programador de seguridad" , "Ray Arnold" , 21293648 , 8 , 1 , "Ulises Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Programador de sistema" , "Dennis Nedry" , 21986795 , 8 , 1 , "Ulises Carrizalez");
+    emp[numEmpleados] = new Planta("Programador de sistema" , "Dennis Nedry" , 21986795 , 8 , 1 , "Ulises Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Cientifico general" , "Henry Wu" , 22948753 , 8, 2 , "John Hammond");
+    emp[numEmpleados] = new Planta("Cientifico general" , "Henry Wu" , 22948753 , 8, 2 , "John Hammond",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Cientifico en ADN" , "Jim Howard O'Conel " , 22036248 , 8 , 2 , "John Hammond");
+    emp[numEmpleados] = new Planta("Cientifico en ADN" , "Jim Howard O'Conel " , 22036248 , 8 , 2 , "John Hammond",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Cientifico en Clonacion" , "Liam Smith Miller" , 22635281 , 8 , 2 , "John Hammond");
+    emp[numEmpleados] = new Planta("Cientifico en Clonacion" , "Liam Smith Miller" , 22635281 , 8 , 2 , "John Hammond",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Seguridad de laboratorio" , "Robert Muldoon" , 23948753 , 8 , 3 , "Alexander Carrizalez");
+    emp[numEmpleados] = new Planta("Seguridad de laboratorio" , "Robert Muldoon" , 23948753 , 8 , 3 , "Alexander Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Seguridad de entrada" , "Bob Peck" , 23125360 , 8 , 3 , "Alexander Carrizalez");
+    emp[numEmpleados] = new Planta("Seguridad de entrada" , "Bob Peck" , 23125360 , 8 , 3 , "Alexander Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Planta("Seguridad de lobby" , "Gerry Harding" , 23452306 , 9 , 3 , "Alexander Carrizalez");
+    emp[numEmpleados] = new Planta("Seguridad de lobby" , "Gerry Harding" , 23452306 , 9 , 3 , "Alexander Carrizalez",2);
     numEmpleados++;
-    emp[numEmpleados] = new Administrador("Programador en Jefe" , "Ulises Carrizalez" , 11203602 , 10 , 1, 15263 , "Ul15e5" , "+52 55 1637 0125" , "Parque de Dizca 74");
+    emp[numEmpleados] = new Administrador("Programador en Jefe" , "Ulises Carrizalez" , 11203602 , 10 , 1, 15263 , "Ul15e5" , "+52 55 1637 0125" , "Parque de Dizca 74",1);
     numEmpleados++;
-    emp[numEmpleados] = new Administrador("Cientifico en Jefe" , "John Hammond" , 12023562 , 12 , 2, 19230 , "JP1993" , "+1 18 0234 5620" , "HAM num 1350");
+    emp[numEmpleados] = new Administrador("Cientifico en Jefe" , "John Hammond" , 12023562 , 12 , 2, 19230 , "JP1993" , "+1 18 0234 5620" , "HAM num 1350",1);
     numEmpleados++;
-    emp[numEmpleados] = new Administrador("Seguridad en Jefe" , "Alexander Carrizalez" , 13026587 , 10 , 3, 16530 , "AL2136M" , "+52 55 4520 1369" , "Parque de Dizca 75");
+    emp[numEmpleados] = new Administrador("Seguridad en Jefe" , "Alexander Carrizalez" , 13026587 , 10 , 3, 16530 , "AL2136M" , "+52 55 4520 1369" , "Parque de Dizca 75",1);
     numEmpleados++;
 }
 
@@ -71,13 +71,13 @@ void AT :: agregarEmpleado(int adm, std::string admi){
     cin>> mat;
     cout<<"Dame tiempo de trabajo del nuevo empleado: "<<endl;
     cin>> Tiempo_Trabajo;
-    emp[numEmpleados] = new Planta(pue , nom , mat , Tiempo_Trabajo , adm , admi);
+    emp[numEmpleados] = new Planta(pue , nom , mat , Tiempo_Trabajo , adm , admi, 2);
     numEmpleados++;
 }
 
-Empleado *AT :: encontrarEmpleado(int mat){
+Empleado * AT :: encontrarEmpleado(int mat){
     for (int i = 0; i < numEmpleados; i++){
-        if (emp[i] -> Empleado :: get_Matricula() == mat){
+        if (emp[i] -> Empleado::get_Matricula() == mat){
             return emp[i];
             break;
         }

@@ -9,13 +9,13 @@ class Planta: public Empleado {
     std::string Administrador_Area;
 
   public:
-    Planta(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi );
+    Planta(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi, int Ran );
     std::string  get_Administrador_Area(){return Administrador_Area;}
     void set_Administrador_Area(std::string  Admi);
     void imprime_info();
 };
 
-Planta :: Planta (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi ) : Empleado (Pue, Nom, Mat, Tiempo_Trabajo, Tipo){
+Planta :: Planta (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi, int Ran ) : Empleado (Pue, Nom, Mat, Tiempo_Trabajo, Tipo, Ran){
     Administrador_Area= Admi;
 }
 void Planta :: set_Administrador_Area(std::string  Admi){

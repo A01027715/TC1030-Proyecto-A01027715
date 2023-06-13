@@ -11,7 +11,7 @@ class Administrador: public Empleado { //Clase de los administradores que hereda
     std::string telefono; // variable de telefono del administrador (Se uso string para darle formato al codigo)
     std::string direccion; // variable de de la direccion de la vivienda del administrador
   public:
-    Administrador(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di); //Metodo constructor del administrador
+    Administrador(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di, int Ran); //Metodo constructor del administrador
     int getContrasena(){return contrasena;} // Consigue la contraseña que sera utilizada para acceder a los datos sencibles del administrador
     std::string getUsuario(){return usuario;} // Consigue el usuario en  caso de que se valla a necesitar en el futuro
     void setUsario (std::string us){usuario= us;} //Le da el valor a usario
@@ -20,10 +20,10 @@ class Administrador: public Empleado { //Clase de los administradores que hereda
     std::string getDireccion(){return direccion;}
     void setDireccion(std::string di){direccion= di;};
     void imprime_info();
-    void imprime_info(int datosCon);
+    virtual void imprime_info(int datosCon);
 };
 
-Administrador :: Administrador (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di) : Empleado(Pue, Nom, Mat, Tiempo_Trabajo, Tipo){
+Administrador :: Administrador (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int cont , std::string us , std::string tel , std::string di, int Ran) : Empleado(Pue, Nom, Mat, Tiempo_Trabajo, Tipo, Ran){
     usuario = us;
     telefono = tel;
     direccion = di;
