@@ -52,7 +52,7 @@ void AT :: generarEjemplo(){
 void AT :: mostrarPlanta(int adm){
     for (int i = 0; i < numEmpleados; i++){
         int tip= emp[i] -> get_Tipo_de_Empleado();
-        if (adm == tip){
+        if (adm == tip and emp[i] -> Empleado::get_Rango() != 1){
             emp[i] -> imprime_info();
         }
     }
@@ -69,7 +69,7 @@ void AT :: agregarEmpleado(int adm, std::string admi){
     cin>> pue;
     cout<<"Dame la matricula del nuevo empleado: "<<endl;
     cin>> mat;
-    cout<<"Dame tiempo de trabajo del nuevo empleado: "<<endl;
+    cout<<"Dame tiempo de trabajo diario del nuevo empleado: "<<endl;
     cin>> Tiempo_Trabajo;
     emp[numEmpleados] = new Planta(pue , nom , mat , Tiempo_Trabajo , adm , admi, 2);
     numEmpleados++;

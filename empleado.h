@@ -63,7 +63,7 @@ void Empleado::imprime_info(){
 	cout << "Nombre: "<< Nombre << endl;
 	cout << "Matricula: "<< Matricula << endl;
 	cout << "Puesto: "<< Puesto << endl;
-	cout << "Sueldo Total pagado o por pagar: "<< Sueldo << " USD" << endl;
+	cout << "Sueldo Diario: "<< Sueldo << " USD" << endl;
   cout << "Area de trabajo: "<< Tipo_de_Empleado << endl;
 }
 
