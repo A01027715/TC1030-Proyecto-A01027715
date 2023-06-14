@@ -53,9 +53,8 @@ int main(){ //
         cout<<"Indique el tipo de empleado que es (insertar el numero de opcion):"<<endl<<"1. Administrador"<<endl<<"2. Empleado de planta"<<endl<<"3. Apagar sistema"<<endl;
         cin >> x;
         cout<<endl<<"_______________________________________"<<endl;
-        if (x == 1){
-            //Si es un admi
-            cout<<"Dame tu matricula:"<<endl; //solicita la matricula
+        if (x == 1){//Si es un Administrador
+            cout<<"Dame tu matricula:"<<endl; //Solicita la matricula
             cin >> mat;
             Empleado * trabajador= JP.encontrarEmpleado(mat); //usa .econtrarEmpleado para buscar el empleado en base a su matricula
             if (trabajador -> Empleado::get_Rango() != 1){
@@ -85,10 +84,18 @@ int main(){ //
                         trabajador -> imprime_info();
                     }
 
-                    else if (y==4){
-                        cout<<"Contraseña de acceso: "<<endl;
+                    else if (y==4){ //Solicita la contrasena para enseñar la infromacion avanzada del Administrador
+                        cout<<"Contrasena de acceso: "<<endl;
                         cin>> con;
-                        trabajador -> imprime_info();
+                        /*
+                        *"dynamic_cast" es una funcion que nos permite  realizar una conversión segura de tipos en tiempo de ejecución, 
+                        *en este codigo lo que hace es cambiar el objeto "trabajador (clase Empleado*)" a "trabajador (clase Administrador*)",
+                        *una ves que esto se cumple entra el en if y usa el metodo exclusivo de la clase administrador imprime_info(int datosCon) 
+                        *para imprimir la infromacion que se solicita.
+                        */
+                        if (Administrador* trabajador = dynamic_cast<Administrador*>(trabajador)) {  
+                            trabajador->imprime_info(con);
+                        }
                     }
 
                     else if (y==5){break;}
@@ -100,23 +107,23 @@ int main(){ //
             }
         }
 
-        else if (x == 2) {
-            cout<<"Dame tu matricula:"<<endl;
+        else if (x == 2) { //Si el usario pone la opcion de Empleado de Planta
+            cout<<"Dame tu matricula:"<<endl; //Solicita la matricula
             cin >> mat;
             Empleado * trabajador= JP.encontrarEmpleado(mat);
 
-            if (trabajador -> Empleado::get_Rango() != 2){
+            if (trabajador -> Empleado::get_Rango() != 2){ //Si no es una matricula de Empleado de Planta Regresa al inicio
                 cout<<"ERROR, EL DUENO DE LA MATRICULA NO ES UN EMPLEADO DE PALANTA"<<endl;
             }
 
             else {
                 std::string NombreA= trabajador -> Empleado::get_Nombre();
                 while (true){
-                    cout<<endl<<"_______________________________________"<<endl;
+                    cout<<endl<<"_______________________________________"<<endl; //Despliega la interfas para usarios perdonalizada para el Empleado de planta
                     cout<<"Bienvenido "<<NombreA<<", esta es la informacion que nosotros le podemos proporcionar: "<<endl<<"1. Mi informacion de Empleado"<<endl<<"2. Cerrar sesion"<<endl;
                     cin >> y;
 
-                    if (y == 1){
+                    if (y == 1){ //imprime la informacion basica del Empleado de Planta
                         trabajador -> imprime_info();
                         cout<<endl<<"_______________________________________"<<endl;
                     }

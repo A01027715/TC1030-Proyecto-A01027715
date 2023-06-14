@@ -17,14 +17,14 @@
 class Planta: public Empleado {
   
   //Variables de instancia del objeto
-  private: 
+  private: //(Modificador de clase)
     std::string Administrador_Area; //Es la variable del nombre del Administrador
 
   //Metodos del objeto
-  public:
+  public: //(Modificador de clase)
     Planta(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi, int Ran ); //Constructor del empleado de palata
     
-    void imprime_info(); //Con este metodo imprimimos la informacion basica del empelado de planta
+    void imprime_info(); //Con este metodo imprimimos la informacion basica del empelado de planta (Sobrecarga)
 };
 
 Planta :: Planta (std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, std::string  Admi, int Ran ) : Empleado (Pue, Nom, Mat, Tiempo_Trabajo, Tipo, Ran){

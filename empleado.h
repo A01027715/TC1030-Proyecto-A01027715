@@ -19,10 +19,10 @@
 using namespace std;
 
 //Se declara objeto Empledado
-class Empleado {
+class Empleado { //(Clase Abstracta)
   
   //Variables de instancia del objeto
-  private: 
+  private: //(Modificador de clase)
     std::string Puesto;
     std::string Nombre;
     int Matricula;
@@ -31,7 +31,7 @@ class Empleado {
     int Rango;
 
   //Metodos del objeto
-  public:
+  public: //(Modificador de clase)
     Empleado(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int Ran); // Constructor de Empleado
 
     void set_Puesto(std::string Pue){Puesto = Pue;} //Con este le damos valor al puesto (en el futuro se puede usar para cambiar el puesto de cualquier empleado)
@@ -51,7 +51,7 @@ class Empleado {
     int get_Rango(){return Rango;} //Este metodo nos permite más adelante conseguir el rango de empleado para separarlo entre planta y admin
     int set_Rango(int Ran){Rango = Ran;} //Este puede ser usado en el futuro para asender o bajar administradores
 
-    virtual void imprime_info()=0; //Metodo abstracto de impresion de informacion que más adelante sera sobrescrito
+    virtual void imprime_info()=0; //Metodo abstracto de impresion de informacion que más adelante sera sobrescrito (Clase Abstracta)
 };
 
 Empleado::Empleado(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trabajo, int Tipo, int Ran){

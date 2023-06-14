@@ -16,13 +16,13 @@
 
 class AT {
   
-  //Variables de instancia del objeto
-  private:
+    //Variables de instancia del objeto
+    private: //(Modificador de clase)
     int numEmpleados; //Numero de empleados (Sera usado para navegar en el arreglo de empleados)
     Empleado * emp[20]; //Arrego de empleados
 
-  //Metodos deL objeto
-  public:
+    //Metodos deL objeto
+    public: //(Modificador de clase)
     AT(); //Metodo constructo de Area de trabajo
 
     void generarEjemplo(); //Registra a los empleados base del codigo
@@ -104,6 +104,7 @@ void AT :: agregarEmpleado(int adm, std::string admi){
 *lo encuenta, dentiene el programa)
 */
 Empleado * AT :: encontrarEmpleado(int mat){
+    
     for (int i = 0; i < numEmpleados; i++){
         if (emp[i] -> Empleado::get_Matricula() == mat){
             return emp[i];
@@ -111,4 +112,6 @@ Empleado * AT :: encontrarEmpleado(int mat){
         }
     }
 }
+
+
 #endif
