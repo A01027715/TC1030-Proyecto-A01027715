@@ -63,7 +63,7 @@ Empleado::Empleado(std::string Pue, std::string  Nom, int Mat, float Tiempo_Trab
   Rango= Ran;
 }
 
-void Empleado::imprime_info(){
+void Empleado::imprime_info(){ //Metodo abstracto de impresion de informacion que más adelante sera sobrescrito
 	cout << "Nombre: "<< Nombre << endl;
 	cout << "Matricula: "<< Matricula << endl;
 	cout << "Puesto: "<< Puesto << endl;

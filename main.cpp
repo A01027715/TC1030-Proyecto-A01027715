@@ -91,7 +91,7 @@ int main(){ //
                         *"dynamic_cast" es una funcion que nos permite  realizar una conversión segura de tipos en tiempo de ejecución, 
                         *en este codigo lo que hace es cambiar el objeto "trabajador (clase Empleado*)" a "trabajador (clase Administrador*)",
                         *una ves que esto se cumple entra el en if y usa el metodo exclusivo de la clase administrador imprime_info(int datosCon) 
-                        *para imprimir la infromacion que se solicita.
+                        *para imprimir la infromacion que se solicita. (https://www.ibm.com/docs/es/i/7.5?topic=expressions-dynamic-cast-operator-c-only)
                         */
                         if (Administrador* trabajador = dynamic_cast<Administrador*>(trabajador)) {  
                             trabajador->imprime_info(con);
