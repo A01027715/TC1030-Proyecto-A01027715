@@ -10,3 +10,7 @@ Como proyecto de TC1030 realice el siguiente trabajo. Este trata de una interfaz
 ## Consideraciones
 - El programa puede correr en la terminal de programación y en la consolaEsta hecho con c++ standard por lo que corre en todos los sistemas operativos, este también ya fue probado en la terminal de Linux del profesor.
 - El main se llama "main.cpp", es importante mencionar que hay que descargar todos los .h porque cada uno de ellos contiene una clase diferente y solo funcionan si todas están juntas, ya que todos están interconectados, solo necesitan estar en la mima carpeta para funcionar.
+
+## Referencias
+- PNG all. (s/f). LOGO DE JURASSIC PARK PNG Imagen gratis "[Imagen]". Recuperado de https://www.pngall.com/es/jurassic-park-png/download/32911
+- IBM. (2023). El operador dynamic_cast (solo C++). Recuperado de https://www.ibm.com/docs/es/i/7.5?topic=expressions-dynamic-cast-operator-c-only
