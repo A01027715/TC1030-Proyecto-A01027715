@@ -135,10 +135,10 @@ int main(){ //
         
         }
 
-        else if (x == 3){break;}
+        else if (x == 3){break;} //Con esta opcion apaga el sistema (cierra el programa)
 
         else {
-            cout<<"ERROR, VUELVA A INTANTAR"<<endl;
+            cout<<"ERROR, VUELVA A INTANTAR"<<endl; //Si no se usa ninguna de las opciones, el programa marca error y te regresa al inicio
         }
     }
 }
